@@ -162,16 +162,16 @@ Several modules above (Program Counter, Accumulator, Instruction Register operan
 
 Every instruction executes over 6 clock cycles (`T1`–`T6`), driven by the Ring Counter:
 
-1. **T1 — Address to MAR**: `Ep`, `Lm` — Program Counter's value loads into the MAR.
-2. **T2 — Fetch**: `CE`, `Li`, `Cp` — RAM outputs the instruction byte onto the bus into the IR, and the Program Counter increments.
-3. **T3 — Decode**: the opcode nibble in the IR feeds the Instruction Decoder; no bus activity yet.
-4. **T4–T6 — Execute**: signals specific to the decoded instruction fire (e.g. for `ADD`: `Ei`, `Lm`, `CE`, `Eu`, `La`), moving the operand address to the MAR, fetching the operand, running it through the ALU, and loading the result into the Accumulator.
+1. **T1:Address to MAR**: `Ep`, `Lm` — Program Counter's value loads into the MAR.
+2. **T2:Fetch**: `CE`, `Li`, `Cp` — RAM outputs the instruction byte onto the bus into the IR, and the Program Counter increments.
+3. **T3:Decode**: the opcode nibble in the IR feeds the Instruction Decoder; no bus activity yet.
+4. **T4:T6 — Execute**: signals specific to the decoded instruction fire (e.g. for `ADD`: `Ei`, `Lm`, `CE`, `Eu`, `La`), moving the operand address to the MAR, fetching the operand, running it through the ALU, and loading the result into the Accumulator.
 
 This fetch–decode–execute loop repeats until a `HLT` instruction stops the clock.
 
 ## Getting Started
 
-1. Install [Logisim Evolution](https://github.com/logisim-evolution/logisim-evolution).
+1. Install [Logisim](https://logisim.en.softonic.com/download?utm_source=SEM&utm_medium=paid&utm_campaign=EN_PK_PMax_Program_Roblox&gad_source=1&gad_campaignid=22658634381&gbraid=0AAAAAC5PVT7iKiRT-JNs7p8p-lIXBP_Bd&gclid=EAIaIQobChMIgamVqprVlQMV0DYGAB0ySQrDEAAYASAAEgLaZPD_BwE)
 2. Open `sap-1-computer.circ` in Logisim Evolution.
 3. Load a program into RAM and run the simulation to watch the processor fetch, decode, and execute instructions.
 
