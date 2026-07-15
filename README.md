@@ -1,6 +1,6 @@
 # SAP-1 Computer
 
-A hardware implementation of the **SAP-1 (Simple-As-Possible 1)** processor architecture, built and simulated in [Logisim Evolution](https://github.com/logisim-evolution/logisim-evolution). SAP-1 is a classic educational CPU design that demonstrates how a computer fetches, decodes, and executes instructions using only basic digital logic — registers, an ALU, a bus, and a control unit.
+A hardware implementation of the **SAP-1 (Simple-As-Possible 1)** processor architecture, built and simulated in Logisim. SAP-1 is a simple  CPU design that demonstrates how a computer fetches, decodes, and executes instructions using only basic digital logic registers, an ALU, a bus, and a control unit.
 
 ## Complete Processor
 
@@ -54,7 +54,7 @@ A 4-bit synchronous counter that holds the address of the next instruction. On e
   <img src="images/Memory%20Adder%20Register%20.png" width="600">
 </p>
 
-A simple 4-bit latch, not a tri-state register — it has only one job, so it never needs to be disconnected from RAM. When `Lm` is asserted, it captures the address currently on the bus (from the Program Counter or the operand field of an instruction) and holds it permanently on RAM's address lines, selecting which memory word is being read.
+A simple 4-bit latch, not a tri-state register — it has only one work, so it never needs to be disconnected from RAM. When `Lm` is asserted, it captures the address currently on the bus (from the Program Counter or the operand field of an instruction) and holds it permanently on RAM's address lines, selecting which memory word is being read.
 
 ### 3. Instruction Register (IR)
 
